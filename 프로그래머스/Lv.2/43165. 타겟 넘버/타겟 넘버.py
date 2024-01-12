@@ -1,16 +1,15 @@
 def solution(numbers, target):
     
-    def calc(idx, sum):
+    def calc(x, y):
         nonlocal answer
-
-        if idx == len(numbers):
-            if sum == target:
-                answer += 1
+            
+        if x == len(numbers):
+            if y == target:
+                answer+=1
             return
-        calc(idx+1, sum + numbers[idx])
-        calc(idx+1, sum - numbers[idx])
         
+        calc(x+1, y+numbers[x])
+        calc(x+1, y-numbers[x])
     answer = 0
     calc(0, 0)
-        
     return answer
