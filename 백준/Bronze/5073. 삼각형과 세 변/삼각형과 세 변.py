@@ -5,14 +5,12 @@ while True:
 
     if (a==b==c==0):
         break
-    if (a==b==c):
+    if (max(a,b,c) >= (a+b+c-max(a,b,c))):
+            answer = 'Invalid'
+    elif (a==b==c):
         answer = 'Equilateral'
     elif (a==b or a==c or b==c):
         answer = 'Isosceles'
-        if (max(a,b,c) >= (a+b+c-max(a,b,c))):
-            answer = 'Invalid'
     else:
         answer = 'Scalene'
-        if (max(a,b,c) >= (a+b+c-max(a,b,c))):
-            answer = 'Invalid'
     print(answer)
